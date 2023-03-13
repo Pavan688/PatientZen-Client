@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from "react"
 import { useHistory } from "react-router-dom"
 import "./Login.css"
 
-export const EmployeeRegister = (props) => {
-    const [employee, setEmployee] = useState({ "account_type": "employee" })
+export const ProviderRegister = (props) => {
+    const [provider, setProvider] = useState({ "account_type": "provider" })
     const [serverFeedback, setFeedback] = useState("")
     const conflictDialog = useRef()
     const history = useHistory()
@@ -15,7 +15,7 @@ export const EmployeeRegister = (props) => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(employee)
+            body: JSON.stringify(provider)
         })
             .then(res => {
                 if (res.status === 200) {
@@ -26,7 +26,7 @@ export const EmployeeRegister = (props) => {
                 });
             })
             .then(createdUser => {
-                localStorage.setItem("honeyrae", JSON.stringify(createdUser))
+                localStorage.setItem("patientzen", JSON.stringify(createdUser))
                 history.push("/")
             })
             .catch(error => {
@@ -40,10 +40,10 @@ export const EmployeeRegister = (props) => {
         }
     }, [serverFeedback])
 
-    const updateEmployee = (evt) => {
-        const copy = { ...employee }
+    const updateProvider = (evt) => {
+        const copy = { ...provider }
         copy[evt.target.id] = evt.target.value
-        setEmployee(copy)
+        setProvider(copy)
     }
 
 
@@ -59,27 +59,35 @@ export const EmployeeRegister = (props) => {
                 <h1 className="h3 mb-3 font-weight-normal">Welcome to the team</h1>
                 <fieldset>
                     <label htmlFor="first_name"> First Name </label>
-                    <input onChange={updateEmployee}
+                    <input onChange={updateProvider}
                         type="text" id="first_name" className="form-control"
                         placeholder="Enter your first name" required autoFocus />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="last_name"> Last Name </label>
-                    <input onChange={updateEmployee}
+                    <input onChange={updateProvider}
                         type="text" id="last_name" className="form-control"
                         placeholder="Enter your last name" required />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="specialty"> Specialty </label>
-                    <input onChange={updateEmployee}
+                    <input onChange={updateProvider}
                         type="text"
                         id="specialty"
                         className="form-control"
-                        placeholder="Tech specialty" required />
+                        placeholder="Provider Specialty" required />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="phone_number"> Pnone Number </label>
+                    <input onChange={updateProvider}
+                        type="text"
+                        id="phone_number"
+                        className="form-control"
+                        placeholder="Contact Number" required />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="email"> Email address </label>
-                    <input onChange={updateEmployee}
+                    <input onChange={updateProvider}
                         type="email"
                         id="email"
                         className="form-control"
@@ -87,7 +95,7 @@ export const EmployeeRegister = (props) => {
                 </fieldset>
                 <fieldset>
                     <label htmlFor="password"> Password </label>
-                    <input onChange={updateEmployee}
+                    <input onChange={updateProvider}
                         type="password"
                         id="password"
                         className="form-control" required />

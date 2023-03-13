@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Repairs } from "./components/Repairs";
 import { BrowserRouter } from 'react-router-dom';
+import { PatientZen } from './components/PatientZen';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Repairs />
+      <PatientZen />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
