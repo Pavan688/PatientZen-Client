@@ -1,22 +1,22 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import { ApplicationViews } from "./ApplicationViews";
-import { NavBar } from "./nav/NavBar";
+import { ApplicationViews } from "./PatientViews";
+import { NavBar } from "./nav/PatientNavBar";
 import { Login } from "./auth/Login";
-import { Register } from "./auth/Register";
-import { EmployeeViews } from "./EmployeeViews";
-import { EmployeeNavBar } from "./nav/EmployeeNavBar";
+import { EmployeeViews } from "./ProviderViews";
+import { EmployeeNavBar } from "./nav/ProviderNavBar";
 import "./Repairs.css";
 import { isStaff } from "../utils/isStaff";
-import { EmployeeRegister } from "./auth/EmployeeRegister";
+import { ProviderRegister } from "./auth/ProviderRegister";
+import { PatientRegister } from "./auth/PatientRegister";
 
-export const Repairs = () => {
+export const PatientZen = () => {
 
   return (
     <>
       <Route
         render={() => {
-          if (localStorage.getItem("honeyrae")) {
+          if (localStorage.getItem("patientzen")) {
             if (isStaff()) {
               return <>
                   <EmployeeNavBar />
@@ -38,11 +38,11 @@ export const Repairs = () => {
       <Route path="/login">
         <Login />
       </Route>
-      <Route path="/register">
-        <Register />
+      <Route path="/registerpatient">
+        <PatientRegister />
       </Route>
-      <Route path="/registeremployee">
-        <EmployeeRegister />
+      <Route path="/registerprovider">
+        <ProviderRegister />
       </Route>
     </>
   )
