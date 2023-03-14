@@ -1,5 +1,6 @@
 import React from "react"
 import { Route } from "react-router-dom"
+import { Appointments } from "./providers/Appointments";
 import { PatientList } from "./providers/PatientList";
 import { PatientRecords } from "./providers/PatientRecords";
 import { ProviderList } from "./providers/ProviderList";
@@ -21,8 +22,12 @@ export const EmployeeViews = () => {
             <ProviderList />
             </Route> 
 
-            <Route exact path="/patients/:patientId(\d+)">
+            <Route exact path="/records/:patientId">
                 <PatientRecords />
+            </Route>
+
+            <Route exact path="/appointments">
+                <Appointments />
             </Route>
 
             {/* <Route exact path="/customers">
