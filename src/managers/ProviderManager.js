@@ -36,3 +36,23 @@ export const getAppointments = (userId) => {
     })
         .then(response => response.json())
 }
+
+export const getRecord = (recordId) => {
+    return fetch(`http://localhost:8000/records/${recordId}`, {
+        headers:{
+            "Authorization": `Token ${token}`
+        }
+    })
+        .then(response => response.json())
+} 
+
+export const updateRecord = (record, recordId) => {
+    return fetch(`http://localhost:8000/records/${recordId}`, {
+        method: "PUT",
+        headers:{
+            "Authorization": `Token ${token}`,
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(record)
+    })
+}

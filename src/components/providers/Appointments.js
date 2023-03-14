@@ -25,10 +25,10 @@ useEffect(() => {
             {
                 appointments.map(appointment => {
                     return <section key={`appointment--${appointment.id}`} className="appointment">
-                        <div className="appointment__name">{appointment.patient}</div>
+                        <div className="appointment__name">{appointment.patient.full_name}</div>
                         <div className="appointment__date">Date: {appointment.date}</div>
                         <div className="appointment__time">Time: {appointment.time}</div>
-                        <div className="appointment__office">Location: {appointment.office}</div>
+                        <div className="appointment__office">Location: {appointment.office.address}</div>
                         <div className="appointment__summary">Summary: {appointment.visit_summary}</div>
                     </section>
                 })
