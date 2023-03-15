@@ -5,6 +5,7 @@ import { EditRecord } from "./providers/EditRecord";
 import { PatientList } from "./providers/PatientList";
 import { PatientRecords } from "./providers/PatientRecords";
 import { ProviderList } from "./providers/ProviderList";
+import { RecordForm } from "./providers/RecordForm";
 
 
 export const EmployeeViews = () => {
@@ -33,6 +34,10 @@ export const EmployeeViews = () => {
 
             <Route exact path="/editRecords/:recordId">
                 <EditRecord />
+            </Route>
+
+            <Route exact path="/recordForm">
+                <RecordForm />
             </Route>
 
             {/* <Route exact path="/customers">
