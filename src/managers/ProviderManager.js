@@ -56,3 +56,15 @@ export const updateRecord = (record, recordId) => {
         body: JSON.stringify(record)
     })
 }
+
+export const createRecord = (record) => {
+    return fetch("http://localhost:8000/records", {
+    method: "POST",
+        headers:{
+            "Authorization": `Token ${token}`,
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(record)
+    })
+        .then(response => response.json())
+}

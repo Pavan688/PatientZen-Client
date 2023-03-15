@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react"
-// import { Link, useNavigate } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { getAppointments } from "../../managers/ProviderManager"
 
 
 export const Appointments = (props) => {
     const [ appointments, setAppointments ] = useState([])
-    // const navigate = useNavigate()
+    const history = useHistory()
 
     const auth = localStorage.getItem("patientzen")
 const userId = JSON.parse(auth).user
@@ -30,6 +30,11 @@ useEffect(() => {
                         <div className="appointment__time">Time: {appointment.time}</div>
                         <div className="appointment__office">Location: {appointment.office.address}</div>
                         <div className="appointment__summary">Summary: {appointment.visit_summary}</div>
+                        <button className="btn btn-2 btn-sep icon-create"
+                        onClick={() => {
+                            history.push(`/recordForm`)
+                        }}
+                        >Start New Record</button>
                     </section>
                 })
             }
