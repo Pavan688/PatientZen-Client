@@ -2,11 +2,17 @@ import React from "react"
 import { Link } from "react-router-dom"
 import "./NavBar.css"
 
-export const NavBar = () => {
+export const PatientNavBar = () => {
     return (
         <ul className="navbar">
             <li className="navbar__item">
-                <Link className="navbar__link" to="/tickets">Service Tickets</Link>
+                <Link className="navbar__link" to="/records">Records</Link>
+            </li>
+            <li className="navbar__item">
+                <Link className="navbar__link" to="/insurances">Insurance</Link>
+            </li>
+            <li className="navbar__item">
+                <Link className="navbar__link" to="/appointments">Appointment</Link>
             </li>
             <li className="navbar__item">
                 <Link className="navbar__link" to="#"

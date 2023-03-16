@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react"
 import { useHistory } from 'react-router-dom'
+import { getPatientAppointments } from "../../managers/PatientManager"
 import { deleteAppointment, getAppointments } from "../../managers/ProviderManager"
 
 
-export const Appointments = (props) => {
+export const PatientAppointments = (props) => {
     const [ appointments, setAppointments ] = useState([])
     const history = useHistory()
 
@@ -11,7 +12,7 @@ export const Appointments = (props) => {
     const userId = JSON.parse(auth).user
 
 useEffect(() => {
-    getAppointments(userId)
+    getPatientAppointments(userId)
     .then((data) => {
         const PtAppointments = data
         setAppointments(PtAppointments)
@@ -22,6 +23,13 @@ useEffect(() => {
 
     return (
         <article className="provider">
+            <h2>Appointments</h2>
+            <button className="btn btn-2 btn-sep icon-create"
+                        onClick={() => {
+                            history.push(`/appointmentForm`)
+                        }}
+                        >Create Appointment</button>
+                        
             {
                 appointments.map(appointment => {
                     return <section key={`appointment--${appointment.id}`} className="appointment">
@@ -32,14 +40,14 @@ useEffect(() => {
                         <div className="appointment__summary">Summary: {appointment.visit_summary}</div>
                         <button className="btn btn-2 btn-sep icon-create"
                         onClick={() => {
-                            history.push(`/recordForm`)
+                            history.push(`/editAppointment/${appointment.id}`)
                         }}
-                        >Start New Record</button>
+                        >Edit Appointment</button>
                         <button className="btn btn-2 btn-sep icon-create"
                         onClick={() => {
                             deleteAppointment(appointment.id)
                             .then(() => {
-                                getAppointments(userId).then(data => setAppointments(data))
+                                getPatientAppointments(userId).then(data => setAppointments(data))
                             })
                         }}
                         >Delete Appointment</button>

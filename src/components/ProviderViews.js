@@ -8,7 +8,7 @@ import { ProviderList } from "./providers/ProviderList";
 import { RecordForm } from "./providers/RecordForm";
 
 
-export const EmployeeViews = () => {
+export const ProviderViews = () => {
 
     return (
         <>
@@ -39,31 +39,6 @@ export const EmployeeViews = () => {
             <Route exact path="/recordForm">
                 <RecordForm />
             </Route>
-
-            {/* <Route exact path="/customers">
-                <CustomerList />
-            </Route>
-
-            {/* <Route exact path="/tickets">
-                <TicketList />
-            </Route>
-
-
-            <Route path="/tickets/create">
-                <TicketForm />
-            </Route>
-
-            <Route exact path="/employees">
-                <EmployeeList />
-            </Route>
-
-            <Route exact path="/employees/:employeeId(\d+)">
-                <Employee />
-            </Route>
-
-            <Route path="/employees/create">
-                <EmployeeForm />
-            </Route> */}
 
         </>
     )

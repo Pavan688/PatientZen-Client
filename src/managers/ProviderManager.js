@@ -68,3 +68,12 @@ export const createRecord = (record) => {
     })
         .then(response => response.json())
 }
+
+export const deleteAppointment = (appointmentId) => {
+    return fetch(`http://localhost:8000/appointments/${appointmentId}`, {
+        method: "DELETE",
+        headers:{
+            "Authorization": `Token ${token}`
+        }
+    })
+}
