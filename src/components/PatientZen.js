@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import { ApplicationViews } from "./PatientViews";
-import { NavBar } from "./nav/PatientNavBar";
+import { PatientViews } from "./PatientViews";
+import { PatientNavBar } from "./nav/PatientNavBar";
 import { Login } from "./auth/Login";
-import { EmployeeViews } from "./ProviderViews";
+import { ProviderViews } from "./ProviderViews";
 import { EmployeeNavBar } from "./nav/ProviderNavBar";
 import "./Repairs.css";
 import { isStaff } from "../utils/isStaff";
@@ -20,13 +20,13 @@ export const PatientZen = () => {
             if (isStaff()) {
               return <>
                   <EmployeeNavBar />
-                  <EmployeeViews />
+                  <ProviderViews />
                 </>
             }
             else {
               return <>
-                  <NavBar />
-                  <ApplicationViews />
+                  <PatientNavBar />
+                  <PatientViews />
                 </>
             }
           } else {

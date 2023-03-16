@@ -14,6 +14,7 @@ export const PatientList = (props) => {
 
     return (
         <article className="patients">
+            <h2 className="patient__title">Patient List</h2>
             {
                 patients.map(patient => {
                     return <section key={`patient--${patient.id}`} className="patient">

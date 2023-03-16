@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react"
-// import { Link, useNavigate } from 'react-router-dom'
 import { getProviders } from "../../managers/ProviderManager"
 
 
 export const ProviderList = (props) => {
     const [ providers, setProvider ] = useState([])
-    // const navigate = useNavigate()
 
     useEffect(() => {
         getProviders().then(data => setProvider(data))
@@ -13,6 +11,7 @@ export const ProviderList = (props) => {
 
     return (
         <article className="provider">
+            <h2 className="provider__title">Provider List</h2>
             {
                 providers.map(provider => {
                     return <section key={`provider--${provider.id}`} className="provider">

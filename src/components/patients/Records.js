@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react"
-import { useParams, useHistory } from "react-router-dom"
-import { getPatientRecords } from "../../managers/ProviderManager"
+import { useHistory } from "react-router-dom"
+import { getUserRecords } from "../../managers/PatientManager"
 
-export const PatientRecords = (props) => {
+export const Records = (props) => {
 
-    const {patientId} = useParams()
+
     const [records, setRecords] = useState([])
-    const history = useHistory()
+
+    const auth = localStorage.getItem("patientzen")
+    const userId = JSON.parse(auth).user
 
     useEffect(() => {
-        getPatientRecords(patientId)
+        getUserRecords(userId)
         .then((data) => {
             const patientRecords = data
             setRecords(patientRecords)
@@ -32,11 +34,6 @@ export const PatientRecords = (props) => {
                         <div className="record__treatment">Treatment: {record.treatment}</div>
                         <div className="record__diagnosis">Diagnosis: {record.diagnosis}</div>
                         <div className="record__medication">Medication: {record.medication}</div>
-                        <button className="btn btn-2 btn-sep icon-create"
-                        onClick={() => {
-                            history.push(`/editRecords/${record.id}`)
-                        }}
-                        >Edit Record</button>
                     </section>
                 })
             }

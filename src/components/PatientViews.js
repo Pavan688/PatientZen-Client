@@ -1,25 +1,39 @@
 import React from "react"
+import { Route } from "react-router-dom"
+import { AppointmentForm } from "./patients/AppointmentForm"
+import { EditAppointment } from "./patients/EditAppointment"
+import { InsuranceList } from "./patients/InsuranceList"
+import { PatientAppointments } from "./patients/PatientAppointments"
+import { Records } from "./patients/Records"
 
 
-export const ApplicationViews = () => {
+export const PatientViews = () => {
 
     return (
         <>
-        {/* //     <Route exact path="/">
-        //         <TicketList />
-        //     </Route>
+            <Route exact path="/">
+            <Records />
+            </Route>
 
-        //     <Route exact path="/tickets">
-        //         <TicketList />
-        //     </Route>
+            <Route exact path="/records">
+            <Records />
+            </Route>
+            
+            <Route exact path="/insurances">
+            <InsuranceList />
+            </Route>
 
-        //     <Route exact path="/tickets/:ticketId(\d+)">
-        //         <Ticket />
-        //     </Route>
+            <Route exact path="/appointments">
+            <PatientAppointments />
+            </Route>
 
-        //     <Route path="/tickets/create">
-        //         <TicketForm />
-        //     </Route> */}
+            <Route exact path="/appointmentForm">
+            <AppointmentForm />
+            </Route>
+
+            <Route exact path="/editAppointment/:appointmentId">
+                <EditAppointment />
+            </Route>
         </>
     )
 }
