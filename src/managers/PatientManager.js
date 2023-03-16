@@ -77,3 +77,15 @@ export const deleteInsurance = (insuranceId) => {
         }
     })
 }
+
+export const createInsurance = (insurance) => {
+    return fetch("http://localhost:8000/insurances", {
+    method: "POST",
+        headers:{
+            "Authorization": `Token ${token}`,
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(insurance)
+    })
+        .then(response => response.json())
+}
