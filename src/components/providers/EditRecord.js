@@ -5,12 +5,14 @@ import { updateRecord, getRecord } from '../../managers/ProviderManager.js'
 
 export const EditRecord = () => {
     const history = useHistory()
+    const auth = localStorage.getItem("patientzen")
+    const userId = JSON.parse(auth).user
     const {recordId} = useParams()
     const [patients, setPatients] = useState([])
     const [providers, setProviders] = useState([])
     const [record, setUpdateRecord] = useState({
         patient: 0,
-        provider: 0,
+        provider: userId,
         visit_datetime: "",
         visit_summary: "",
         diagnosis: "",
@@ -54,27 +56,6 @@ export const EditRecord = () => {
                         patients.map(
                             (patient1) => {
                                 return <option key={`patient--${patient1.id}`} value={patient1.id}>{patient1.full_name} and DOB: {patient1.DOB}</option>
-                            }
-                        )
-                    }
-                    </select>
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="provider-dropdown">Find Correct Provider</label>
-                    <select
-                    value={record.provider.id}
-                    onChange={(evt) => {
-                        const copy= {...record}
-                            copy.provider.id = parseInt(evt.target.value) 
-                            setUpdateRecord(copy)}}>
-                    <option value={0} type="select" className="form-dropdown" required>Select Provider</option>
-                    {
-                        providers.map(
-                            (provider1) => {
-                                return <option key={`provider--${provider1.id}`} value={provider1.id}>{provider1.full_name}</option>
                             }
                         )
                     }
@@ -179,7 +160,7 @@ export const EditRecord = () => {
 
                     const record1 = {
                         patient: parseInt(record.patient.id),
-                        provider: parseInt(record.provider.id),
+                        provider: userId,
                         visit_datetime: record.visit_datetime,
                         visit_summary: record.visit_summary,
                         treatment: record.treatment,

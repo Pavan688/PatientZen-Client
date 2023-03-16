@@ -19,6 +19,15 @@ export const getProviders = () => {
         .then(response => response.json())
 }
 
+export const getSingleProviders = (userId) => {
+    return fetch(`http://localhost:8000/providers/${userId}`, {
+        headers:{
+            "Authorization": `Token ${token}`
+        }
+    })
+        .then(response => response.json())
+}
+
 export const getPatientRecords = (patientId) => {
     return fetch(`http://localhost:8000/records?patient=${patientId}`, {
         headers:{
@@ -77,3 +86,4 @@ export const deleteAppointment = (appointmentId) => {
         }
     })
 }
+

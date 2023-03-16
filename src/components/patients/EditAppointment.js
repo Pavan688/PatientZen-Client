@@ -5,12 +5,14 @@ import { getPatients, getProviders } from "../../managers/ProviderManager.js"
 
 export const EditAppointment = () => {
     const history = useHistory()
+    const auth = localStorage.getItem("patientzen")
+    const userId = JSON.parse(auth).user
     const {appointmentId} = useParams()
     const [patients, setPatients] = useState([])
     const [providers, setProviders] = useState([])
     const [offices, setOffice] = useState([])
     const [appointment, setUpdateAppointment] = useState({
-        patient: 0,
+        patient: userId,
         provider: 0,
         date: "",
         time: "",
@@ -44,27 +46,6 @@ export const EditAppointment = () => {
     return (
         <form className="appointmentForm">
             <h2 className="appointmentForm__title">Edit Appointment</h2>
-            
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="patient-dropdown">Select Your Name and Verify Date Of Birth</label>
-                    <select
-                    value={appointment.patient.id}
-                    onChange={(evt) => {
-                        const copy= {...appointment}
-                            copy.patient.id = parseInt(evt.target.value) 
-                            setUpdateAppointment(copy)}}>
-                    <option value={0} type="select" className="form-dropdown" required>Find Your Name</option>
-                    {
-                        patients.map(
-                            (patient1) => {
-                                return <option key={`patient--${patient1.id}`} value={patient1.id}>{patient1.full_name} and DOB: {patient1.DOB}</option>
-                            }
-                        )
-                    }
-                    </select>
-                </div>
-            </fieldset>
 
             <fieldset>
                 <div className="form-group">
@@ -110,7 +91,7 @@ export const EditAppointment = () => {
 
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="time">Appointment Date: </label>
+                    <label htmlFor="date">Appointment Date: </label>
                     <input
                         required
                         type="date"
@@ -128,7 +109,7 @@ export const EditAppointment = () => {
             
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="date">Appointment Time:</label>
+                    <label htmlFor="time">Appointment Time:</label>
                     <input
                         required
                         type="time"
@@ -139,7 +120,7 @@ export const EditAppointment = () => {
                         onChange={
                             (evt) => {
                                 const copy = {...appointment}
-                                copy.date = evt.target.value
+                                copy.time = evt.target.value
                                 setUpdateAppointment(copy)
                             }
                         } />
@@ -170,7 +151,7 @@ export const EditAppointment = () => {
                     evt.preventDefault()
 
                     const appointment1 = {
-                        patient: parseInt(appointment.patient.id),
+                        patient: userId,
                         provider: parseInt(appointment.provider.id),
                         office: parseInt(appointment.office.id),
                         date: appointment.date,
