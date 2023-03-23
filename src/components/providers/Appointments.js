@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useHistory } from 'react-router-dom'
 import { deleteAppointment, getAppointments } from "../../managers/ProviderManager"
-
+import "./providers.css"
 
 export const Appointments = (props) => {
     const [ appointments, setAppointments ] = useState([])
@@ -10,18 +10,19 @@ export const Appointments = (props) => {
     const auth = localStorage.getItem("patientzen")
     const userId = JSON.parse(auth).user
 
-useEffect(() => {
-    getAppointments(userId)
-    .then((data) => {
-        const PtAppointments = data
-        setAppointments(PtAppointments)
-    })
-},
-[]
-)
+    useEffect(() => {
+        getAppointments(userId)
+        .then((data) => {
+            const PtAppointments = data
+            setAppointments(PtAppointments)
+        })
+    },
+    []
+    )
 
     return (
-        <article className="provider">
+        <article className="appointments">
+            <h2 className="appointmentForm__title">Appointments</h2>
             {
                 appointments.map(appointment => {
                     return <section key={`appointment--${appointment.id}`} className="appointment">
@@ -30,12 +31,12 @@ useEffect(() => {
                         <div className="appointment__time">Time: {appointment.time}</div>
                         <div className="appointment__office">Location: {appointment.office.address}</div>
                         <div className="appointment__summary">Summary: {appointment.visit_summary}</div>
-                        <button className="btn btn-2 btn-sep icon-create"
+                        <button className="btn-startrecord"
                         onClick={() => {
                             history.push(`/recordForm`)
                         }}
                         >Start New Record</button>
-                        <button className="btn btn-2 btn-sep icon-create"
+                        <button className="btn--deleteappointment"
                         onClick={() => {
                             deleteAppointment(appointment.id)
                             .then(() => {

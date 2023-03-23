@@ -6,6 +6,9 @@ export const EmployeeNavBar = () => {
     return (
         <ul className="navbar">
             <li className="navbar__item">
+                <div className="navbar__linktitle">PatientZen: Provider Portal</div>
+            </li>
+            <li className="navbar__item">
                 <Link className="navbar__link" to="/patients">Patients</Link>
             </li>
             <li className="navbar__item active">

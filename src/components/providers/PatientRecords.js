@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams, useHistory } from "react-router-dom"
 import { getPatientRecords, getSingleProviders } from "../../managers/ProviderManager"
+import "./providers.css"
 
 export const PatientRecords = (props) => {
 
@@ -33,7 +34,7 @@ export const PatientRecords = (props) => {
             {
                 records.map(record => {
                     return <section key={`record--${record.id}`} className="record">
-                        <div className="record__datetime" > {record.visit_datetime}</div>
+                        <div className="record__datetime" >Record: {record.visit_datetime}</div>
                         <div className="record__name-dob" > {record.patient.full_name} DOB: {record.patient.DOB}</div>
                         <div className="record__summary">Summary: {record.visit_summary}</div>
                         <div className="record__treatment">Treatment: {record.treatment}</div>
@@ -42,7 +43,7 @@ export const PatientRecords = (props) => {
                         <div>
                             {
                                 record.provider.id === providers.id ?
-                                <button className="btn btn-2 btn-sep icon-create"
+                                <button className="btn--editrecord"
                                 onClick={() => {
                                     history.push(`/editRecords/${record.id}`)
                                 }}

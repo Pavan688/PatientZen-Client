@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-// import { Link, useNavigate } from 'react-router-dom'
 import { getPatients } from "../../managers/ProviderManager"
+import "./providers.css"
 
 
 export const PatientList = (props) => {
     const [ patients, setPatients ] = useState([])
-    // const navigate = useNavigate()
 
     useEffect(() => {
         getPatients().then(data => setPatients(data))

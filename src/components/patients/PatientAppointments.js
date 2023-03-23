@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useHistory } from 'react-router-dom'
 import { getPatientAppointments } from "../../managers/PatientManager"
 import { deleteAppointment, getAppointments } from "../../managers/ProviderManager"
-
+import "./patients.css"
 
 export const PatientAppointments = (props) => {
     const [ appointments, setAppointments ] = useState([])
@@ -22,9 +22,9 @@ useEffect(() => {
 )
 
     return (
-        <article className="provider">
+        <article className="patient-Appointments">
             <h2>Appointments</h2>
-            <button className="btn btn-2 btn-sep icon-create"
+            <button className="btn-createappointment"
                         onClick={() => {
                             history.push(`/appointmentForm`)
                         }}
@@ -32,18 +32,18 @@ useEffect(() => {
                         
             {
                 appointments.map(appointment => {
-                    return <section key={`appointment--${appointment.id}`} className="appointment">
-                        <div className="appointment__name">{appointment.patient.full_name}</div>
-                        <div className="appointment__date">Date: {appointment.date}</div>
-                        <div className="appointment__time">Time: {appointment.time}</div>
-                        <div className="appointment__office">Location: {appointment.office.address}</div>
-                        <div className="appointment__summary">Summary: {appointment.visit_summary}</div>
-                        <button className="btn btn-2 btn-sep icon-create"
+                    return <section key={`patient-appointment--${appointment.id}`} className="patient-appointment">
+                        <div className="patient-appointment__name">{appointment.patient.full_name}</div>
+                        <div className="patient-appointment__date">Date: {appointment.date}</div>
+                        <div className="patient-appointment__time">Time: {appointment.time}</div>
+                        <div className="patient-appointment__office">Location: {appointment.office.address}</div>
+                        <div className="patient-appointment__summary">Summary: {appointment.visit_summary}</div>
+                        <button className="btn-editappointment"
                         onClick={() => {
                             history.push(`/editAppointment/${appointment.id}`)
                         }}
                         >Edit Appointment</button>
-                        <button className="btn btn-2 btn-sep icon-create"
+                        <button className="btn-deleteappointment"
                         onClick={() => {
                             deleteAppointment(appointment.id)
                             .then(() => {

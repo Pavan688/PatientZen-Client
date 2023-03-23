@@ -48,9 +48,9 @@ export const EditAppointment = () => {
             <h2 className="appointmentForm__title">Edit Appointment</h2>
 
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="provider-dropdown">Choose Provider</label>
-                    <select
+                <div className="appointmentform-group">
+                    <label className="appointment-label" htmlFor="provider-dropdown">Choose Provider</label>
+                    <select className="appointment-select"
                     value={appointment.provider.id}
                     onChange={(evt) => {
                         const copy= {...appointment}
@@ -69,9 +69,9 @@ export const EditAppointment = () => {
             </fieldset>
 
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="office-dropdown">Choose Office</label>
-                    <select
+                <div className="appointmentform-group">
+                    <label className="appointment-label" htmlFor="office-dropdown">Choose Office</label>
+                    <select className="appointment-select"
                     value={appointment.office.id}
                     onChange={(evt) => {
                         const copy= {...appointment}
@@ -90,12 +90,12 @@ export const EditAppointment = () => {
             </fieldset>
 
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="date">Appointment Date: </label>
+                <div className="appointmentform-group">
+                    <label className="appointment-label" htmlFor="date">Appointment Date: </label>
                     <input
                         required
                         type="date"
-                        className="form-control"
+                        className="appointmentform-control"
                         value={appointment.date}
                         onChange={
                             (evt) => {
@@ -108,14 +108,14 @@ export const EditAppointment = () => {
             </fieldset>
             
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="time">Appointment Time:</label>
+                <div className="appointmentform-group">
+                    <label className="appointment-label" htmlFor="time">Appointment Time:</label>
                     <input
                         required
                         type="time"
                         min="08:00"
                         max="19:00"
-                        className="form-control"
+                        className="appointmentform-control"
                         value={appointment.time}
                         onChange={
                             (evt) => {
@@ -128,12 +128,12 @@ export const EditAppointment = () => {
             </fieldset>
 
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="">Summary Of Visit: </label>
+                <div className="appointmentform-group">
+                    <label className="appointment-label" htmlFor="">Summary Of Visit: </label>
                     <input
                         required
                         type="text"
-                        className="form-control"
+                        className="appointmentform-control"
                         value={appointment.visit_summary}
                         onChange={
                             (evt) => {
@@ -159,7 +159,6 @@ export const EditAppointment = () => {
                         visit_summary: appointment.visit_summary
                     }
 
-                    // Send POST request to your API
                     updateAppointment(appointment1, appointmentId)
                         .then(() => history.push("/appointments"))
                 }}

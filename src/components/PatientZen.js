@@ -5,7 +5,6 @@ import { PatientNavBar } from "./nav/PatientNavBar";
 import { Login } from "./auth/Login";
 import { ProviderViews } from "./ProviderViews";
 import { EmployeeNavBar } from "./nav/ProviderNavBar";
-import "./Repairs.css";
 import { isStaff } from "../utils/isStaff";
 import { ProviderRegister } from "./auth/ProviderRegister";
 import { PatientRegister } from "./auth/PatientRegister";

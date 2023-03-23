@@ -33,13 +33,13 @@ export const AppointmentForm = () => {
 
 
     return (
-        <form className="recordForm">
+        <form className="appointmentForm">
             <h2 className="appointmentForm__title">New Appointment Form</h2>
 
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="provider-dropdown">Choose Provider</label>
-                    <select
+                <div className="appointmentform-group">
+                    <label className="appointment-label" htmlFor="provider-dropdown">Choose Provider</label>
+                    <select className="appointment-select"
                     onChange={(evt) => {
                         const copy= {...appointment}
                             copy.provider = parseInt(evt.target.value) 
@@ -57,9 +57,9 @@ export const AppointmentForm = () => {
             </fieldset>
 
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="office-dropdown">Choose Office</label>
-                    <select
+                <div className="appointmentform-group">
+                    <label className="appointment-label" htmlFor="office-dropdown">Choose Office</label>
+                    <select className="appointment-select"
                     onChange={(evt) => {
                         const copy= {...appointment}
                             copy.office = parseInt(evt.target.value) 
@@ -77,12 +77,12 @@ export const AppointmentForm = () => {
             </fieldset>
 
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="date">Appointment Date: </label>
+                <div className="appointmentform-group">
+                    <label className="appointment-label" htmlFor="date">Appointment Date: </label>
                     <input
                         required
                         type="date"
-                        className="form-control"
+                        className="appointmentform-control"
                         onChange={
                             (evt) => {
                                 const copy = {...appointment}
@@ -94,14 +94,14 @@ export const AppointmentForm = () => {
             </fieldset>
             
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="time">Appointment Time:</label>
+                <div className="appointmentform-group">
+                    <label className="appointment-label" htmlFor="time">Appointment Time:</label>
                     <input
                         required
                         type="time"
                         min="08:00"
                         max="19:00"
-                        className="form-control"
+                        className="appointmentform-control"
                         onChange={
                             (evt) => {
                                 const copy = {...appointment}
@@ -113,12 +113,12 @@ export const AppointmentForm = () => {
             </fieldset>
 
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="">Summary Of Visit: </label>
+                <div className="appointmentform-group">
+                    <label className="appointment-label" htmlFor="">Summary Of Visit: </label>
                     <input
                         required
                         type="text"
-                        className="form-control"
+                        className="appointmentform-control"
                         onChange={
                             (evt) => {
                                 const copy = {...appointment}
@@ -148,7 +148,7 @@ export const AppointmentForm = () => {
                     createAppointment(appointment2)
                         .then(() => history.push("/appointments"))
                 }}
-                className="btn btn-primary">Submit</button>
+                className="btn-submitappointment">Submit</button>
 
 
             </form>

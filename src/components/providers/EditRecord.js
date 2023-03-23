@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { useHistory, useParams } from "react-router-dom"
 import { getPatients, getProviders } from "../../managers/ProviderManager.js"
 import { updateRecord, getRecord } from '../../managers/ProviderManager.js'
+import "./providers.css"
+
 
 export const EditRecord = () => {
     const history = useHistory()
@@ -46,6 +48,7 @@ export const EditRecord = () => {
                 <div className="form-group">
                     <label htmlFor="patient-dropdown">Varify Patient Name and Date Of Birth</label>
                     <select
+                    className="record-select"
                     value={record.patient.id}
                     onChange={(evt) => {
                         const copy= {...record}
@@ -83,7 +86,7 @@ export const EditRecord = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="">Summary: </label>
-                    <input
+                    <textarea
                         required
                         type="text"
                         className="form-control"
@@ -94,14 +97,14 @@ export const EditRecord = () => {
                                 copy.visit_summary = evt.target.value
                                 setUpdateRecord(copy)
                             }
-                        } />
+                        }> </textarea>
                 </div>
             </fieldset>
 
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="treatment">Treatment: </label>
-                    <input
+                    <textarea
                         required
                         type="text"
                         className="form-control"
@@ -112,14 +115,14 @@ export const EditRecord = () => {
                                 copy.treatment = evt.target.value
                                 setUpdateRecord(copy)
                             }
-                        } />
+                        }> </textarea> 
                 </div>
             </fieldset>
 
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="diagnosis">Diagnosis: </label>
-                    <input
+                    <textarea
                         required
                         type="text"
                         className="form-control"
@@ -130,14 +133,14 @@ export const EditRecord = () => {
                                 copy.diagnosis = evt.target.value
                                 setUpdateRecord(copy)
                             }
-                        } />
+                        }> </textarea>
                 </div>
             </fieldset>
 
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="meication">Medication: </label>
-                    <input
+                    <textarea
                         required
                         type="text"
                         className="form-control"
@@ -148,7 +151,7 @@ export const EditRecord = () => {
                                 copy.medication = evt.target.value
                                 setUpdateRecord(copy)
                             }
-                        } />
+                        }> </textarea>
                 </div>
             </fieldset>
             

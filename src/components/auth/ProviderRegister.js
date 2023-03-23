@@ -48,25 +48,25 @@ export const ProviderRegister = (props) => {
 
 
     return (
-        <main style={{ textAlign: "center" }}>
+        <main className="container--register">
             <dialog className="dialog dialog--password" ref={conflictDialog}>
                 <div>{ serverFeedback }</div>
                 <button className="button--close"
                     onClick={e => conflictDialog.current.close()}>Close</button>
             </dialog>
 
-            <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Welcome to the team</h1>
+            <form className="form--register" onSubmit={handleRegister}>
+                <h1 className="h3 mb-3 font-weight-normal">Welcome to the Team</h1>
                 <fieldset>
-                    <label htmlFor="first_name"> First Name </label>
+                    <label htmlFor="first_name"> First Name: </label>
                     <input onChange={updateProvider}
-                        type="text" id="first_name" className="form-control"
+                        type="text" id="first_name" className="registerform-control"
                         placeholder="Enter your first name" required autoFocus />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="last_name"> Last Name </label>
+                    <label htmlFor="last_name"> Last Name: </label>
                     <input onChange={updateProvider}
-                        type="text" id="last_name" className="form-control"
+                        type="text" id="last_name" className="registerform-control"
                         placeholder="Enter your last name" required />
                 </fieldset>
                 <fieldset>
@@ -74,15 +74,15 @@ export const ProviderRegister = (props) => {
                     <input onChange={updateProvider}
                         type="text"
                         id="specialty"
-                        className="form-control"
+                        className="registerform-control"
                         placeholder="Provider Specialty" required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="phone_number"> Pnone Number </label>
+                    <label htmlFor="phone_number"> Phone Number </label>
                     <input onChange={updateProvider}
                         type="text"
                         id="phone_number"
-                        className="form-control"
+                        className="registerform-control"
                         placeholder="Contact Number" required />
                 </fieldset>
                 <fieldset>
@@ -90,7 +90,7 @@ export const ProviderRegister = (props) => {
                     <input onChange={updateProvider}
                         type="email"
                         id="email"
-                        className="form-control"
+                        className="registerform-control"
                         placeholder="Email address" required />
                 </fieldset>
                 <fieldset>
@@ -98,7 +98,7 @@ export const ProviderRegister = (props) => {
                     <input onChange={updateProvider}
                         type="password"
                         id="password"
-                        className="form-control" required />
+                        className="registerform-control" required />
                 </fieldset>
                 <fieldset>
                     <button type="submit"> Register </button>
