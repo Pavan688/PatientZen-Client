@@ -1,24 +1,58 @@
-# Honey Rae's Repairs
+# PatientZen
 
-This is the client application for Honey Rae's Repairs, a small business that perform tech repairs and service for the local community.
+## Primary Features:
+This application allows providers to create and read patient records, view set appointments, and delete appointments.
+The providers are also able to view all records of patient history in one view to understand patient.
+The providers can view other providers' informaition to see help or get in depth history of patient.
+The patients can view individualized personal records nd add or delete insurances.
+The patients can add, delete, and edit appointments. 
 
-People can create an account and submit service ticket that contains a brief description of the issue, and then mark whether it is an emergency or not. Emergencies get prioritized by the Honey Rae's staff.
+## Target Audience:
+My target audience is healthcare clinics that are looking for a ditigal solution for record keeping. 
 
-Employees can also create an account and are able to view all of the tickets submitted by customers. An employee can claim a ticket when work begins, and then mark when the job is complete.
+## Purpose and Problems it Solves:
+PatientZen is an application for healthcare to schedule appointments and view, add, track patients records. This application allows patients to schedule appointments with providers. It also allows providers to document patients’ needs, providers' diagnosis, treatment, and medications. 
 
-## Technology Behind This Project
+## Getting Started:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+1. In the terminal, create a directory
+```bash
+cd <new directory name>
+```
 
-In the project directory, you can run:
+2. Run 
+```bash
+git clone git@github.com:Pavan688/PatientZen-Client.git
+```
 
-### `npm start`
+3. Install dependencies
+```bash
+npm install
+```
+4. Run the code
+```bash
+npm start
+```
+5. This will initialize the React app in your browser, but you won't be able to log into the site or access data without running the server side of this project. To download and start the server, go to https://github.com/Pavan688/patientzen-server and follow the README there.
 
-Runs the app in the development mode.\
-Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
+6. Once you are running the server, create a new user, log in to view the site, and test out the features!
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Wireframe and ERD
+
+[Wireframe](https://miro.com/app/board/uXjVPgoI7T4=/?share_link_id=520751640682)
+
+[ERD](https://dbdiagram.io/d/6404fa07296d97641d858f28)
+
+
+## Tech Stack
+
+
+![JavaScript](https://img.shields.io/badge/javascript-FFD700.svg?style=for-the-badge&logo=javascript&logoColor=black)
+![REACT.js](https://img.shields.io/badge/react-61DBFB.svg?style=for-the-badge&logo=react&logoColor=black)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![CSS3](https://img.shields.io/badge/%20CSS3-0078d7.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JSON](https://img.shields.io/badge/%20JSON-36454F.svg?style=for-the-badge&logo=json&logoColor=white)
 
