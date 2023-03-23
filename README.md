@@ -44,6 +44,9 @@ npm start
 
 [ERD](https://dbdiagram.io/d/6404fa07296d97641d858f28)
 
+## Pavankumar Patel
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Pavan688)
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pavankumar-patel-916597265/)
 
 ## Tech Stack
 
