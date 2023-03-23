@@ -19,16 +19,16 @@ export const InsuranceForm = () => {
 
 
     return (
-        <form className="recordForm">
-            <h2 className="appointmentForm__title">New Insurance Form</h2>
+        <form className="insuranceForm">
+            <h2 className="insuranceForm__title">New Insurance Form</h2>
 
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="time">Insurance Name: </label>
+                <div className="insuranceform-group">
+                    <label className="insurance-label" htmlFor="time">Insurance Name: </label>
                     <input
                         required
                         type="text"
-                        className="form-control"
+                        className="insuranceform-control"
                         onChange={
                             (evt) => {
                                 const copy = {...insurance}
@@ -40,13 +40,13 @@ export const InsuranceForm = () => {
             </fieldset>
             
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="date">Insurance Phone Number:</label>
+                <div className="insuranceform-group">
+                    <label className="insurance-label" htmlFor="date">Insurance Phone Number:</label>
                     <input
                         required
                         type="tel"
                         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                        className="form-control"
+                        className="insuranceform-control"
                         placeholder="###-###-####"
                         onChange={
                             (evt) => {
@@ -59,12 +59,12 @@ export const InsuranceForm = () => {
             </fieldset>
 
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="">Policy Number: </label>
+                <div className="insuranceform-group">
+                    <label className="insurance-label" htmlFor="">Policy Number: </label>
                     <input
                         required
                         type="text"
-                        className="form-control"
+                        className="insuranceform-control"
                         onChange={
                             (evt) => {
                                 const copy = {...insurance}
@@ -76,12 +76,12 @@ export const InsuranceForm = () => {
             </fieldset>
 
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="">Insurance Start Date: </label>
+                <div className="insuranceform-group">
+                    <label className="insurance-label" htmlFor="">Insurance Start Date: </label>
                     <input
                         required
                         type="date"
-                        className="form-control"
+                        className="insuranceform-control"
                         onChange={
                             (evt) => {
                                 const copy = {...insurance}
@@ -93,12 +93,12 @@ export const InsuranceForm = () => {
             </fieldset>
 
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="">Insurance End Date: </label>
+                <div className="insuranceform-group">
+                    <label className="insurance-label" htmlFor="">Insurance End Date: </label>
                     <input
                         required
                         type="date"
-                        className="form-control"
+                        className="insuranceform-control"
                         onChange={
                             (evt) => {
                                 const copy = {...insurance}
@@ -128,7 +128,7 @@ export const InsuranceForm = () => {
                     createInsurance(insurance2)
                         .then(() => history.push("/insurances"))
                 }}
-                className="btn btn-primary">Submit</button>
+                className="btn-insurancesubmit">Submit</button>
 
 
             </form>

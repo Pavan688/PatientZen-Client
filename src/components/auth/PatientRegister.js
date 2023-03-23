@@ -48,7 +48,7 @@ export const PatientRegister = () => {
 
 
     return (
-        <main style={{ textAlign: "center" }}>
+        <main className="container--register">
             <dialog className="dialog dialog--password" ref={conflictDialog}>
                 <div>{ serverFeedback }</div>
                 <button className="button--close"
@@ -58,73 +58,73 @@ export const PatientRegister = () => {
                     }}>Close</button>
             </dialog>
 
-            <form className="form--login" onSubmit={handleRegister}>
+            <form className="form--register" onSubmit={handleRegister}>
                 <h1 className="h3 mb-3 font-weight-normal">Register New Account</h1>
                 <fieldset>
-                    <label htmlFor="first_name"> First Name </label>
+                    <label htmlFor="first_name"> First Name: </label>
                     <input onChange={updatePatient}
                         type="text" id="first_name"
-                        className="form-control" required autoFocus />
+                        className="registerform-control" required autoFocus />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="last_name"> Last Name </label>
+                    <label htmlFor="last_name"> Last Name: </label>
                     <input onChange={updatePatient}
                         type="text" id="last_name"
-                        className="form-control" required />
+                        className="registerform-control" required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="DOB"> Date Of Birth </label>
+                    <label htmlFor="DOB"> Date Of Birth: </label>
                     <input onChange={updatePatient}
-                        type="text" id="DOB" placeholder="MM-DD-YYYY"
-                        className="form-control" required />
+                        type="date" id="DOB" placeholder="MM-DD-YYYY"
+                        className="registerform-control" required />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="phone_number"> Phone Number </label>
                     <input onChange={updatePatient}
-                        type="text" id="phone_number"
-                        className="form-control" required />
+                        type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="phone_number" placeholder="###-###-####"
+                        className="registerform-control" required />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="email"> Email address </label>
                     <input onChange={updatePatient}
                         type="email"
                         id="email"
-                        className="form-control" required />
+                        className="registerform-control" required />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="password"> Password </label>
                     <input onChange={updatePatient}
                         type="password"
                         id="password"
-                        className="form-control" required />
+                        className="registerform-control" required />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="street_name"> Street </label>
                     <input onChange={updatePatient}
                         type="text"
                         id="street_name"
-                        className="form-control" required />
+                        className="registerform-control" required />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="city"> City </label>
                     <input onChange={updatePatient}
                         type="text"
                         id="city"
-                        className="form-control" required />
+                        className="registerform-control" required />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="state"> State </label>
                     <input onChange={updatePatient}
                         type="text"
                         id="state"
-                        className="form-control" required />
+                        className="registerform-control" required />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="zip_code"> Zip Code </label>
                     <input onChange={updatePatient}
                         type="text"
                         id="zip_code"
-                        className="form-control" required />
+                        className="registerform-control" required />
                 </fieldset>
                 <fieldset>
                     <button type="submit"> Register </button>

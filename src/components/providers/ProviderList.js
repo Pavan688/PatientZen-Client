@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { getProviders } from "../../managers/ProviderManager"
+import "./providers.css"
 
 
 export const ProviderList = (props) => {
@@ -10,7 +11,7 @@ export const ProviderList = (props) => {
     }, [])
 
     return (
-        <article className="provider">
+        <article className="providers">
             <h2 className="provider__title">Provider List</h2>
             {
                 providers.map(provider => {

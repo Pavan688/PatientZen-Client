@@ -1,0 +1,266 @@
+/* PatientRecords.module.css */
+
+.patient-records {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.patient-record {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #adcdf0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.patient-record__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.patient-record__datetime {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
+
+.patient-record__name-dob {
+    font-size: 1.00rem;
+    margin-bottom: .2rem;
+}
+
+.patient-record__summary {
+    font-size: 1.00rem;
+    margin-bottom: .2rem;
+}
+
+.patient-record__treatment {
+    font-size: 1.00rem;
+    margin-bottom: .2rem;
+}
+
+.patient-record__diagnosis {
+    font-size: 1.00rem;
+    margin-bottom: .2rem;
+}
+
+.patient-record__medication {
+    font-size: 1.00rem;
+    margin-bottom: .5rem;
+}
+
+/* insurance.module.css */
+
+.insurances {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.insurance {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #adcdf0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.insurance__name {
+    font-weight: bold;
+}
+
+.insurance__phone_number,
+.insurance__policy_number,
+.insurance__validity {
+    margin-top: 10px;
+}
+
+.btn-deleteinsurance,
+.btn-addinsurance {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-addinsurance:hover{
+    background-color: #0062cc;
+}
+.btn-deleteinsurance:hover {
+    background-color: #cc0000;
+}
+
+/* patientAppointment.module.css */
+
+.patient-Appointments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.patient-appointment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #adcdf0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.patient-appointment__name {
+    font-weight: bold;
+}
+
+.patient-appointment__date,
+.patient-appointment__time,
+.patient-appointment__office,
+.patient-appointment__summary {
+    margin-top: 10px;
+}
+
+.btn-createappointment,
+.btn-editappointment,
+.btn-deleteappointment {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-startrecord:hover,
+.btn-editappointment:hover{
+    background-color: #0062cc;
+}
+.btn-deleteappointment:hover {
+    background-color: #cc0000;
+}
+
+    /* patientAppointmentForm.module.css */
+    
+.appointmentForm {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.appointmentForm__title {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.appointmentform-group {
+    margin-bottom: 20px;
+}
+
+.appointment-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.appointment-select,
+.appointmentform-control {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.appointment-select::-ms-expand {
+    display: none;
+}
+
+.btn-submitappointment:hover {
+    background-color: #3e8e41;
+}
+
+.btn-submitappointment {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    /* patientAppointmentForm.module.css */
+
+.insuranceForm {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .insuranceForm__title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    
+    .insuranceform-group {
+        margin-bottom: 20px;
+    }
+    
+    .insurance-label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    
+    .insuranceform-control {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-top: 5px;
+        box-sizing: border-box;
+    }
+
+    .btn-insurancesubmit:hover {
+        background-color: #3e8e41;
+    }
+    
+    .btn-insurancesubmit {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }

@@ -45,7 +45,7 @@ export const Login = () => {
                         <input type="email" id="inputEmail"
                             value={email}
                             onChange={evt => setEmail(evt.target.value)}
-                            className="form-control"
+                            className="loginform-control"
                             placeholder="Email address"
                             required autoFocus />
                     </fieldset>
@@ -54,7 +54,7 @@ export const Login = () => {
                         <input type="password" id="inputPassword"
                             value={password}
                             onChange={evt => setPassword(evt.target.value)}
-                            className="form-control"
+                            className="loginform-control"
                             placeholder="Password"
                             required />
                     </fieldset>
